@@ -1,3 +1,3 @@
-const {signup, signin} = require ('./user')
+const {signup, signin, getAllUsers, getaUser} = require ('./user')
 
-module.exports = {signup, signin}
+module.exports = {signup, signin, getAllUsers, getaUser}

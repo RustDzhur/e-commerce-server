@@ -25,6 +25,14 @@ const userSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		token: {
+			type: String,
+		},
+		role: {
+			type: String,
+			enum: ["user", "business", "admin"],
+			default: "user"
+		}
 	},
 	{ timestamps: true, versionKey: false }
 );
@@ -34,7 +42,7 @@ userSchema.pre("save", async function (next) {
 	this.password = await bcrypt.hash(this.password, salt);
 });
 
-userSchema.method.isPasswordMatched = async function (enteredPassword) {
+userSchema.methods.isPasswordMatched = async function (enteredPassword) {
 	return await bcrypt.compare(enteredPassword, this.password);
 };
 
