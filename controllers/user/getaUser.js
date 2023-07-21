@@ -1,7 +1,7 @@
 const User = require("../../models/userModel");
 const asyncHandler = require("express-async-handler");
 
-const getaUser = asyncHandler(async (req, res) => {
+const getUser = asyncHandler(async (req, res) => {
 	try {
 		const { id } = req.params;
 		const user = await User.findById(id);
@@ -12,4 +12,4 @@ const getaUser = asyncHandler(async (req, res) => {
 	}
 });
 
-module.exports = getaUser;
+module.exports = getUser;
