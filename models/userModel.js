@@ -33,6 +33,10 @@ const userSchema = new mongoose.Schema(
 			enum: ["user", "business", "admin"],
 			default: "user"
 		},
+		isBlocked: {
+			type: Boolean,
+			default: false
+		},
 		cart: {
 			type: Array,
 			default: []
@@ -44,7 +48,11 @@ const userSchema = new mongoose.Schema(
 		wishlist: [{
 			type: mongoose.Schema.Types.ObjectId,
 			ref: "Product"
-		}]
+		}],
+		refreshToken: {
+			type: String,
+			
+		}
 	},
 	{ timestamps: true, versionKey: false }
 );

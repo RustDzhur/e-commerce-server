@@ -1,3 +1,25 @@
-const {signup, signin, getAllUsers, getUser, deleteUser, updateUser} = require ('./user')
+const {
+	signup,
+	signin,
+	getAllUsers,
+	getUser,
+	deleteUser,
+	updateUser,
+    blockUser,
+	unBlockUser,
+	refreshToken,
+	logout
+} = require("./user");
 
-module.exports = {signup, signin, getAllUsers, getUser, deleteUser, updateUser}
+module.exports = {
+	signup,
+	signin,
+	getAllUsers,
+	getUser,
+	deleteUser,
+	updateUser,
+	blockUser,
+	unBlockUser,
+	refreshToken,
+	logout
+};
