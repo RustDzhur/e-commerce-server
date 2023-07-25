@@ -11,6 +11,8 @@ const {
 	logout
 } = require("./user");
 
+const {create} = require ('./product')
+
 module.exports = {
 	signup,
 	signin,
@@ -21,5 +23,6 @@ module.exports = {
 	blockUser,
 	unBlockUser,
 	refreshToken,
-	logout
+	logout,
+	create,
 };

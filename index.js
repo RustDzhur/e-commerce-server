@@ -3,7 +3,8 @@ const { default: mongoose } = require("mongoose");
 const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser')
 require("dotenv").config();
-const userAuth = require("./routes/authRoute");
+const userRouter = require("./routes/authRoute");
+const productRouter = require ('./routes/productRoute')
 
 const app = express();
 
@@ -14,7 +15,8 @@ const { notFound, errorHandler } = require("./middlewares");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser())
-app.use("/user/auth", userAuth);
+app.use("/user/auth", userRouter);
+app.use('/api/product', productRouter)
 
 app.use(notFound)
 app.use(errorHandler)
