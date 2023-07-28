@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser())
 app.use("/user/auth", userRouter);
-app.use('/api/product', productRouter)
+app.use('/api', productRouter)
 
 app.use(notFound)
 app.use(errorHandler)
