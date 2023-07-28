@@ -11,7 +11,7 @@ const {
 	logout
 } = require("./user");
 
-const {create, getOneProduct, gelAllProducts} = require ('./product')
+const {create, getOneProduct, gelAllProducts, update, deleteProduct, filterProduct} = require ('./product')
 
 module.exports = {
 	signup,
@@ -26,5 +26,8 @@ module.exports = {
 	logout,
 	create,
 	getOneProduct,
-	gelAllProducts
+	gelAllProducts,
+	update,
+	deleteProduct,
+	filterProduct
 };

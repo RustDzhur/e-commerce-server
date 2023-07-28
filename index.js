@@ -2,6 +2,7 @@ const express = require("express");
 const { default: mongoose } = require("mongoose");
 const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser')
+const morgan = require ('morgan')
 require("dotenv").config();
 const userRouter = require("./routes/authRoute");
 const productRouter = require ('./routes/productRoute')
@@ -12,6 +13,7 @@ const PORT = process.env.PORT || 4000;
 
 const { notFound, errorHandler } = require("./middlewares");
 
+app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser())
