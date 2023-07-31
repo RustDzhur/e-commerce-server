@@ -5,7 +5,6 @@ const validationMongoDbId = require("../../utils/validationMongoDbId");
 
 const updateUser = asyncHandler(async (req, res) => {
 	const { firstname, lastname, mobile, email, password } = req?.body || {};
-	const hashedPassword = await bcrypt.hash(password, 10);
 
 	try {
 		const updatedUserData = {
@@ -13,7 +12,6 @@ const updateUser = asyncHandler(async (req, res) => {
 			lastname,
 			mobile,
 			email,
-			password: hashedPassword,
 		};
 		const { id } = req.user;
 		validationMongoDbId(id)

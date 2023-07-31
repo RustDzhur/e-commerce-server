@@ -5,13 +5,22 @@ const {
 	getUser,
 	deleteUser,
 	updateUser,
-    blockUser,
+	blockUser,
 	unBlockUser,
 	refreshToken,
-	logout
+	logout,
+	updatePassword,
+	forgotPasswordToken,
+	resetPassword,
 } = require("./user");
 
-const {create, getOneProduct, gelAllProducts, update, deleteProduct} = require ('./product')
+const {
+	create,
+	getOneProduct,
+	gelAllProducts,
+	update,
+	deleteProduct,
+} = require("./product");
 
 module.exports = {
 	signup,
@@ -24,6 +33,9 @@ module.exports = {
 	unBlockUser,
 	refreshToken,
 	logout,
+	updatePassword,
+	forgotPasswordToken,
+	resetPassword,
 	create,
 	getOneProduct,
 	gelAllProducts,

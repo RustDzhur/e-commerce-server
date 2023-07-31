@@ -8,6 +8,9 @@ const blockUser = require("./blockUser");
 const unBlockUser = require("./unBlockUser");
 const refreshToken = require ('./refreshToken')
 const logout = require ('./logout')
+const updatePassword = require ('./updatePassword')
+const forgotPasswordToken = require ('./forgotPassword')
+const resetPassword = require ('./resetPassword')
 
 module.exports = {
 	signup,
@@ -19,5 +22,8 @@ module.exports = {
 	blockUser,
 	unBlockUser,
 	refreshToken,
-	logout
+	logout,
+	updatePassword,
+	forgotPasswordToken,
+	resetPassword
 };
