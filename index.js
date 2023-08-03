@@ -6,6 +6,7 @@ const morgan = require ('morgan')
 require("dotenv").config();
 const userRouter = require("./routes/authRoute");
 const productRouter = require ('./routes/productRoute')
+const blogRouter = require ('./routes/blogRoute')
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(bodyParser.json());
 app.use(cookieParser())
 app.use("/user/auth", userRouter);
 app.use('/api', productRouter)
+app.use('/api', blogRouter)
 
 app.use(notFound)
 app.use(errorHandler)

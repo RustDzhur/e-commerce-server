@@ -22,6 +22,8 @@ const {
 	deleteProduct,
 } = require("./product");
 
+const {createBlog} = require('./blog')
+
 module.exports = {
 	signup,
 	signin,
@@ -41,4 +43,5 @@ module.exports = {
 	gelAllProducts,
 	update,
 	deleteProduct,
+	createBlog
 };
