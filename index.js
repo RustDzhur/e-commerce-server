@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(cookieParser())
 app.use("/user/auth", userRouter);
 app.use('/api', productRouter)
-app.use('/api', blogRouter)
+app.use('/api/blog', blogRouter)
 
 app.use(notFound)
 app.use(errorHandler)
