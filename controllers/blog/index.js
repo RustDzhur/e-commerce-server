@@ -4,5 +4,6 @@ const getBlog = require ('./getBlog')
 const getAllBlogs = require('./getAllBlogs')
 const deleteBlog = require ('./delete')
 const likeBlog = require ('./likeBlog')
+const dislikeBlog = require ('./dislikeBlog')
 
-module.exports = {createBlog, updateBlog, getBlog, getAllBlogs, deleteBlog, likeBlog}
+module.exports = {createBlog, updateBlog, getBlog, getAllBlogs, deleteBlog, likeBlog, dislikeBlog}

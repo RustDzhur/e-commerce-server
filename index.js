@@ -7,6 +7,8 @@ require("dotenv").config();
 const userRouter = require("./routes/authRoute");
 const productRouter = require ('./routes/productRoute')
 const blogRouter = require ('./routes/blogRoute')
+const productCategory = require ('./routes/productCategoryRoute')
+const blogCategory = require ('./routes/blogCategoryRoute')
 
 const app = express();
 
@@ -21,6 +23,8 @@ app.use(cookieParser())
 app.use("/user/auth", userRouter);
 app.use('/api', productRouter)
 app.use('/api/blog', blogRouter)
+app.use('/api/product-category', productCategory)
+app.use('/api/blog-category', blogCategory)
 
 app.use(notFound)
 app.use(errorHandler)

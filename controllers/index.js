@@ -22,7 +22,18 @@ const {
 	deleteProduct,
 } = require("./product");
 
-const {createBlog, updateBlog, getBlog, getAllBlogs, deleteBlog, likeBlog} = require('./blog')
+const {
+	createBlog,
+	updateBlog,
+	getBlog,
+	getAllBlogs,
+	deleteBlog,
+	likeBlog,
+	dislikeBlog,
+} = require("./blog");
+
+const {productCreateCategory, productUpdateCategory, productDeleteCategory} = require ('./productCategory')
+const {blogCreateCategory} = require ('./blogCategory')
 
 module.exports = {
 	signup,
@@ -48,5 +59,10 @@ module.exports = {
 	getBlog,
 	getAllBlogs,
 	deleteBlog,
-	likeBlog
+	likeBlog,
+	dislikeBlog,
+	productCreateCategory,
+	productUpdateCategory,
+	productDeleteCategory,
+	blogCreateCategory
 };

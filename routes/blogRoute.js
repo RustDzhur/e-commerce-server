@@ -10,5 +10,6 @@ router.get('/getBlog/:id', blogCtrl.getBlog)
 router.get('/getAllBlogs', blogCtrl.getAllBlogs)
 router.delete('/delete/:id', authMiddleware, isAdmin, blogCtrl.deleteBlog)
 router.put('/likeBlog', authMiddleware, blogCtrl.likeBlog)
+router.put('/dislikeBlog', authMiddleware, blogCtrl.dislikeBlog)
 
 module.exports = router
