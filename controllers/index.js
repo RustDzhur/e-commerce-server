@@ -32,8 +32,28 @@ const {
 	dislikeBlog,
 } = require("./blog");
 
-const {productCreateCategory, productUpdateCategory, productDeleteCategory} = require ('./productCategory')
-const {blogCreateCategory} = require ('./blogCategory')
+const {
+	productCreateCategory,
+	productUpdateCategory,
+	productDeleteCategory,
+	getCategory,
+	getAllCategories,
+} = require("./productCategory");
+const {
+	blogCreateCategory,
+	blogDeleteCategory,
+	blogUpdateCategory,
+	blogGetCategory,
+	blogGetAllCategories,
+} = require("./blogCategory");
+
+const {
+	brandCreate,
+	deleteBrand,
+	updateBrand,
+	getBrand,
+	getAllBrands,
+} = require("./brand");
 
 module.exports = {
 	signup,
@@ -64,5 +84,16 @@ module.exports = {
 	productCreateCategory,
 	productUpdateCategory,
 	productDeleteCategory,
-	blogCreateCategory
+	getCategory,
+	getAllCategories,
+	blogCreateCategory,
+	blogDeleteCategory,
+	blogUpdateCategory,
+	blogGetCategory,
+	blogGetAllCategories,
+	brandCreate,
+	deleteBrand,
+	updateBrand,
+	getBrand,
+	getAllBrands,
 };
