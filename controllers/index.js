@@ -20,6 +20,8 @@ const {
 	gelAllProducts,
 	update,
 	deleteProduct,
+	addToWishList,
+	rating
 } = require("./product");
 
 const {
@@ -74,6 +76,8 @@ module.exports = {
 	gelAllProducts,
 	update,
 	deleteProduct,
+	addToWishList,
+	rating,
 	createBlog,
 	updateBlog,
 	getBlog,
