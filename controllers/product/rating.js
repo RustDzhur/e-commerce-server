@@ -1,11 +1,10 @@
 const Product = require("../../models/productModel");
-const User = require("../../models/userModel");
 const asyncHandler = require("express-async-handler");
 
 const rating = asyncHandler(async (req, res) => {
 	const { _id } = req.user;
 	const { star, prodId } = req.body;
-    
+
 	try {
 		const product = await Product.findById(prodId);
 		let alreadyRated = product.ratings.find(
@@ -33,8 +32,21 @@ const rating = asyncHandler(async (req, res) => {
 				},
 				{ new: true }
 			);
-			res.json(ratedProduct);
 		}
+		const getAllRatings = await Product.findById(prodId);
+		let totalRatings = getAllRatings.ratings.length;
+		let ratingSum = getAllRatings.ratings
+			.map((item) => item.star)
+			.reduce((prev, current) => prev + current, 0);
+		let actualRating = Math.round(ratingSum / totalRatings);
+		let finalProduct = await Product.findByIdAndUpdate(
+			prodId,
+			{
+				totalRating: actualRating,
+			},
+			{ new: true }
+		);
+		res.json(finalProduct);
 	} catch (error) {
 		throw new Error(error);
 	}
