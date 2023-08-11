@@ -26,6 +26,7 @@ const rating = asyncHandler(async (req, res) => {
 					$push: {
 						ratings: {
 							star: star,
+							comment: comment,
 							postedby: _id,
 						},
 					},

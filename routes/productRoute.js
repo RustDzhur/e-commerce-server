@@ -2,8 +2,20 @@ const express = require("express");
 const router = express.Router();
 const productCrtl = require("../controllers");
 const { authMiddleware, isAdmin } = require("../middlewares");
+const {
+	uploadPhoto,
+	productImgResize,
+} = require("../middlewares/uploadImages");
 
 router.post("/product/create", authMiddleware, isAdmin, productCrtl.create);
+router.put(
+	"/product/upload/:id",
+	authMiddleware,
+	isAdmin,
+	uploadPhoto.array("images", 10),
+	productImgResize,
+	productCrtl.uploadImages
+);
 router.get("/product/:id", productCrtl.getOneProduct);
 router.get("/products", productCrtl.gelAllProducts);
 router.put("/product/update/:id", authMiddleware, isAdmin, productCrtl.update);

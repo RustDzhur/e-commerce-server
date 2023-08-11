@@ -10,6 +10,7 @@ const blogRouter = require ('./routes/blogRoute')
 const productCategory = require ('./routes/productCategoryRoute')
 const blogCategory = require ('./routes/blogCategoryRoute')
 const brandRouter = require ('./routes/brandRoute')
+const couponRouter = require ('./routes/couponRoute')
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use('/api/blog', blogRouter)
 app.use('/api/product-category', productCategory)
 app.use('/api/blog-category', blogCategory)
 app.use('/api/brand', brandRouter)
+app.use('/api/coupon', couponRouter)
 
 app.use(notFound)
 app.use(errorHandler)

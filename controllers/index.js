@@ -22,6 +22,7 @@ const {
 	deleteProduct,
 	addToWishList,
 	rating,
+	uploadImages,
 } = require("./product");
 
 const {
@@ -32,6 +33,7 @@ const {
 	deleteBlog,
 	likeBlog,
 	dislikeBlog,
+	uploadImagesBlogs,
 } = require("./blog");
 
 const {
@@ -57,6 +59,8 @@ const {
 	getAllBrands,
 } = require("./brand");
 
+const {createCoupon, getAllCoupons, updateCoupon, deleteCoupon} = require('./coupon')
+
 module.exports = {
 	signup,
 	signin,
@@ -78,6 +82,7 @@ module.exports = {
 	deleteProduct,
 	addToWishList,
 	rating,
+	uploadImages,
 	createBlog,
 	updateBlog,
 	getBlog,
@@ -85,6 +90,7 @@ module.exports = {
 	deleteBlog,
 	likeBlog,
 	dislikeBlog,
+	uploadImagesBlogs,
 	productCreateCategory,
 	productUpdateCategory,
 	productDeleteCategory,
@@ -100,4 +106,8 @@ module.exports = {
 	updateBrand,
 	getBrand,
 	getAllBrands,
+	createCoupon,
+	getAllCoupons,
+	updateCoupon,
+	deleteCoupon
 };
