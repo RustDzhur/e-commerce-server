@@ -1,6 +1,7 @@
 const multer = require("multer");
 const sharp = require("sharp");
 const path = require("path");
+const fs = require ('fs').promises
 
 const multerStorage = multer.diskStorage({
 	destination: function (req, file, cb) {
@@ -31,15 +32,26 @@ const uploadPhoto = multer({
 	limits: { fieldNameSize: 2000000 },
 });
 
+const deleteImage = async (file) => {
+	await fs.unlink(file);
+};
+
+const resizeImage = async (file, destination) => {
+	const resizedFileName = `public/images/${destination}/${file.filename}`;
+
+	await sharp(file.path)
+		.resize(300, 300)
+		.toFormat("jpeg")
+		.jpeg({ quality: 90 })
+		.toFile(resizedFileName);
+};
+
 const productImgResize = async (req, res, next) => {
 	if (!req.files) return next();
 	await Promise.all(
 		req.files.map(async (file) => {
-			sharp(file.path)
-				.resize(300, 300)
-				.toFormat("jpeg")
-				.jpeg({ quality: 90 })
-				.toFile(`public/images/products/${file.filename}`);
+			await resizeImage(file, "products");
+			await deleteImage(`public/images/products/${file.filename}`);
 		})
 	);
 	next();
@@ -49,14 +61,11 @@ const blogImgResize = async (req, res, next) => {
 	if (!req.files) return next();
 	await Promise.all(
 		req.files.map(async (file) => {
-			sharp(file.path)
-				.resize(300, 300)
-				.toFormat("jpeg")
-				.jpeg({ quality: 90 })
-				.toFile(`public/images/blogs/${file.filename}`);
-		})
+			await resizeImage(file, "blogs");
+			await deleteImage(`public/images/blogs/${file.filename}`);
+		}),
 	);
 	next();
 };
 
-module.exports = { uploadPhoto, productImgResize, blogImgResize };
+module.exports = { uploadPhoto, productImgResize, blogImgResize, deleteImage };

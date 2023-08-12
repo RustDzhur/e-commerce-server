@@ -1,4 +1,4 @@
-const cloudinary = require("cloudinary");
+const cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
 	cloud_name: process.env.CLOUDINARY_NAME,
@@ -7,16 +7,16 @@ cloudinary.config({
 	secure: true,
 });
 
-const cloudinaryUploadImg = async (fileToUploads) => {
-	return new Promise((resolve) => {
-		cloudinary.uploader.upload(fileToUploads, (result) => {
-			resolve({
-				url: result.secure_url,
-			}, {
-                resource_type: "auto",
-            });
+const cloudinaryUploadImg = async (fileToUpload) => {
+	try {
+		const result = await cloudinary.uploader.upload(fileToUpload, {
+		  resource_type: "auto",
 		});
-	});
+		return result.secure_url;
+	  } catch (error) {
+		console.error(error);
+		throw new Error("Failed to upload image to Cloudinary");
+	  }
 };
 
 module.exports = cloudinaryUploadImg

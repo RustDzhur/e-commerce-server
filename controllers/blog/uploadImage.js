@@ -2,17 +2,21 @@ const Blog = require("../../models/blogModel");
 const asynchandler = require("express-async-handler");
 const validationMongoDbId = require("../../utils/validationMongoDbId");
 const cloudinaryUploadImg = require("../../utils/cloudinary");
+const { deleteImage } = require("../../middlewares/uploadImages");
+const path = require ("path")
+const fs = require ('fs').promises
 
 const uploadImages = asynchandler(async (req, res) => {
 	const { id } = req.params;
 	validationMongoDbId(id);
 	try {
-		const uploader = (path) => cloudinaryUploadImg(path, "images");
+		const uploader = (path) => cloudinaryUploadImg(path);
 		const urls = [];
 		const files = req.files;
 		for (const file of files) {
 			const { path } = file;
 			const newPath = await uploader(path);
+			await deleteImage(path)
 			urls.push(newPath);
 		}
 
