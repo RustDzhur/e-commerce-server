@@ -1,6 +1,7 @@
 const {
 	signup,
-	signin,
+	signinUser,
+	signinAdmin,
 	getAllUsers,
 	getUser,
 	deleteUser,
@@ -63,7 +64,8 @@ const {createCoupon, getAllCoupons, updateCoupon, deleteCoupon} = require('./cou
 
 module.exports = {
 	signup,
-	signin,
+	signinUser,
+	signinAdmin,
 	getAllUsers,
 	getUser,
 	deleteUser,

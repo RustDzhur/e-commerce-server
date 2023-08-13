@@ -5,7 +5,8 @@ const {authMiddleware, isAdmin} = require("../middlewares");
 
 
 router.post("/signup", userCtrl.signup);
-router.post("/signin", userCtrl.signin);
+router.post("/signin-user", userCtrl.signinUser);
+router.post("/signin-admin", userCtrl.signinAdmin);
 
 router.post('/forgot-password-token', userCtrl.forgotPasswordToken)
 router.put('/reset-password/:token', userCtrl.resetPassword)

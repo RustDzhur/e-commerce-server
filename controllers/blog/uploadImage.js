@@ -3,8 +3,6 @@ const asynchandler = require("express-async-handler");
 const validationMongoDbId = require("../../utils/validationMongoDbId");
 const cloudinaryUploadImg = require("../../utils/cloudinary");
 const { deleteImage } = require("../../middlewares/uploadImages");
-const path = require ("path")
-const fs = require ('fs').promises
 
 const uploadImages = asynchandler(async (req, res) => {
 	const { id } = req.params;

@@ -1,5 +1,6 @@
 const signup = require("./signup");
-const signin = require("./signin");
+const signinUser = require("./signinUser");
+const signinAdmin = require("./signinAdmin");
 const getAllUsers = require("./getAllUsers");
 const getUser = require("./getaUser");
 const deleteUser = require("./deleteUser");
@@ -14,7 +15,8 @@ const resetPassword = require ('./resetPassword')
 
 module.exports = {
 	signup,
-	signin,
+	signinUser,
+	signinAdmin,
 	getAllUsers,
 	getUser,
 	deleteUser,
