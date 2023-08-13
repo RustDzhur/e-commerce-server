@@ -8,6 +8,8 @@ router.post("/signup", userCtrl.signup);
 router.post("/signin-user", userCtrl.signinUser);
 router.post("/signin-admin", userCtrl.signinAdmin);
 
+router.get('/getWishlist', authMiddleware, userCtrl.getWishlist)
+
 router.post('/forgot-password-token', userCtrl.forgotPasswordToken)
 router.put('/reset-password/:token', userCtrl.resetPassword)
 router.get("/users", authMiddleware, userCtrl.getAllUsers);

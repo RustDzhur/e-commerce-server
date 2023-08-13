@@ -14,6 +14,8 @@ const signin = asyncHandler(async (req, res) => {
 			message: "Your account blocked, please contact support",
 		});
 	}
+	
+	if (user.role !== "admin") throw new Error ("Not Authorised")
 
 	if (user && (await user.isPasswordMatched(password))) {
 		const { password, createdAt, updatedAt, ...userData } = user.toObject(); //._doc

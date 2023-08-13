@@ -13,6 +13,8 @@ const {
 	updatePassword,
 	forgotPasswordToken,
 	resetPassword,
+	getWishlist,
+	saveUserAdress,
 } = require("./user");
 
 const {
@@ -77,6 +79,8 @@ module.exports = {
 	updatePassword,
 	forgotPasswordToken,
 	resetPassword,
+	getWishlist,
+	saveUserAdress,
 	create,
 	getOneProduct,
 	gelAllProducts,
