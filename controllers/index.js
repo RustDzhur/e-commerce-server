@@ -14,7 +14,7 @@ const {
 	forgotPasswordToken,
 	resetPassword,
 	getWishlist,
-	saveUserAdress,
+	saveUserAddress,
 } = require("./user");
 
 const {
@@ -80,7 +80,7 @@ module.exports = {
 	forgotPasswordToken,
 	resetPassword,
 	getWishlist,
-	saveUserAdress,
+	saveUserAddress,
 	create,
 	getOneProduct,
 	gelAllProducts,

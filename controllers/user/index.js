@@ -13,7 +13,7 @@ const updatePassword = require ('./updatePassword')
 const forgotPasswordToken = require ('./forgotPassword')
 const resetPassword = require ('./resetPassword')
 const getWishlist = require ('./getWishlist')
-const saveUserAdress = require ('./saveUserAdress')
+const saveUserAddress = require ('./saveUserAdress')
 
 module.exports = {
 	signup,
@@ -31,5 +31,5 @@ module.exports = {
 	forgotPasswordToken,
 	resetPassword,
 	getWishlist,
-	saveUserAdress,
+	saveUserAddress,
 };
