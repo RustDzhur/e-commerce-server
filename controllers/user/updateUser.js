@@ -1,6 +1,5 @@
 const User = require("../../models/userModel");
 const asyncHandler = require("express-async-handler");
-const bcrypt = require("bcrypt");
 const validationMongoDbId = require("../../utils/validationMongoDbId");
 
 const updateUser = asyncHandler(async (req, res) => {

@@ -15,6 +15,10 @@ const {
 	resetPassword,
 	getWishlist,
 	saveUserAddress,
+	userCart,
+	getUserCart,
+	emptyCart,
+	applyCoupon,
 } = require("./user");
 
 const {
@@ -81,6 +85,10 @@ module.exports = {
 	resetPassword,
 	getWishlist,
 	saveUserAddress,
+	userCart,
+	getUserCart,
+	emptyCart,
+	applyCoupon,
 	create,
 	getOneProduct,
 	gelAllProducts,

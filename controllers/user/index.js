@@ -14,6 +14,10 @@ const forgotPasswordToken = require ('./forgotPassword')
 const resetPassword = require ('./resetPassword')
 const getWishlist = require ('./getWishlist')
 const saveUserAddress = require ('./saveUserAdress')
+const userCart = require ('./userCart')
+const getUserCart = require ('./getUserCart')
+const emptyCart = require ('./emptyCart')
+const applyCoupon = require ('./applyCoupon')
 
 module.exports = {
 	signup,
@@ -32,4 +36,8 @@ module.exports = {
 	resetPassword,
 	getWishlist,
 	saveUserAddress,
+	userCart,
+	getUserCart,
+	emptyCart,
+	applyCoupon,
 };

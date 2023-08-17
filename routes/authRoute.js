@@ -9,6 +9,10 @@ router.post("/signin-user", userCtrl.signinUser);
 router.post("/signin-admin", userCtrl.signinAdmin);
 
 router.get('/getWishlist', authMiddleware, userCtrl.getWishlist)
+router.post('/cart', authMiddleware, userCtrl.userCart)
+router.get('/user-cart', authMiddleware, userCtrl.getUserCart)
+router.delete('/empty-cart', authMiddleware, userCtrl.emptyCart)
+router.post('/apply-coupon', authMiddleware, userCtrl.applyCoupon)
 
 router.post('/forgot-password-token', userCtrl.forgotPasswordToken)
 router.put('/reset-password/:token', userCtrl.resetPassword)
