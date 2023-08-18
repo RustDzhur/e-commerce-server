@@ -21,8 +21,8 @@ const applyCoupon = asyncHandler(async (req, res) => {
 			cartTotal -
 			(cartTotal * validCoupon.discount) / 100
 		).toFixed(2);
-        await Cart.findOneAndUpdate({orderBy: user._id}, {totalAfterDiscount}, {new: true})
-        res.json(totalAfterDiscount)
+        const newDiscountPrice = await Cart.findOneAndUpdate({orderBy: user._id}, {totalAfterDicount: totalAfterDiscount}, {new: true})
+        res.json(newDiscountPrice)
 	} catch (error) {
 		throw new Error();
 	}

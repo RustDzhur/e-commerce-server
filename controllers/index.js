@@ -19,6 +19,9 @@ const {
 	getUserCart,
 	emptyCart,
 	applyCoupon,
+	createOrder,
+	getOrders,
+	updateOrderStatus,
 } = require("./user");
 
 const {
@@ -89,6 +92,9 @@ module.exports = {
 	getUserCart,
 	emptyCart,
 	applyCoupon,
+	createOrder,
+	getOrders,
+	updateOrderStatus,
 	create,
 	getOneProduct,
 	gelAllProducts,

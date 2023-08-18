@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-var cartSchema = new mongoose.Schema(
+const cartSchema = new mongoose.Schema(
 	{
 		products: [
 			{
@@ -23,7 +23,8 @@ var cartSchema = new mongoose.Schema(
             type: Number
         },
         totalAfterDicount: {
-            type: Number
+            type: Number,
+			default: 0
         },
 		orderBy: {
 			type: mongoose.Schema.Types.ObjectId,

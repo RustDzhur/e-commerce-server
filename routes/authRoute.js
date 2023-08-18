@@ -13,6 +13,8 @@ router.post('/cart', authMiddleware, userCtrl.userCart)
 router.get('/user-cart', authMiddleware, userCtrl.getUserCart)
 router.delete('/empty-cart', authMiddleware, userCtrl.emptyCart)
 router.post('/apply-coupon', authMiddleware, userCtrl.applyCoupon)
+router.post('/cash-order', authMiddleware, userCtrl.createOrder)
+router.get('/get-orders', authMiddleware, userCtrl.getOrders)
 
 router.post('/forgot-password-token', userCtrl.forgotPasswordToken)
 router.put('/reset-password/:token', userCtrl.resetPassword)
@@ -26,5 +28,6 @@ router.put ("/saveAddress", authMiddleware,  userCtrl.saveUserAddress)
 router.put ("/password/:id", authMiddleware,  userCtrl.updatePassword)
 router.put('/block/:id', authMiddleware, isAdmin, userCtrl.blockUser)
 router.put('/unblock/:id', authMiddleware, isAdmin, userCtrl.unBlockUser)
+router.put('/update-order/:id', authMiddleware, isAdmin, userCtrl.updateOrderStatus)
 
 module.exports = router;

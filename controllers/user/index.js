@@ -18,6 +18,9 @@ const userCart = require ('./userCart')
 const getUserCart = require ('./getUserCart')
 const emptyCart = require ('./emptyCart')
 const applyCoupon = require ('./applyCoupon')
+const createOrder = require ('./createOrder')
+const getOrders = require ('./getOrders')
+const updateOrderStatus = require ('./updateOrderStatus')
 
 module.exports = {
 	signup,
@@ -40,4 +43,7 @@ module.exports = {
 	getUserCart,
 	emptyCart,
 	applyCoupon,
+	createOrder,
+	getOrders,
+	updateOrderStatus,
 };
